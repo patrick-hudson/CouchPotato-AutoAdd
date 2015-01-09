@@ -1,12 +1,12 @@
 <?php
 //Edit the following two lines for your couchpotato URL and your API Key (Settings -> General). Make sure to enable Advanced Settings.
-$couchpotatourl = "http://127.0.0.1/couchpotato/api";
+$couchpotatourl = "http://127.0.0.1/couchpotato";
 $apikey = "abc123";
 $file_handle = fopen("imdbid.txt", "r");
 //$line = fgets($file_handle);
 while (($line = fgets($file_handle)) !== false) {
 	$curl_handle=curl_init();
-	curl_setopt($curl_handle,CURLOPT_URL,"$url/$api/movie.add/?identifier=$line");
+	curl_setopt($curl_handle,CURLOPT_URL,"$url/api/$api/movie.add/?identifier=$line");
 	#Uncomment if you have CP Authentication Setup
 	//curl_setopt($curl_handle, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 	//curl_setopt($curl_handle, CURLOPT_USERPWD, "user:pass");  
